@@ -8,10 +8,11 @@ file.close()
 
 
 print(" Hello ")
-response = raw_input(" what is your name ?").split(" ")
-for nextWord in response:
+response = raw_input(" what is your name ?")
+words = response.split(" ")
+for nextWord in words:
     if nextWord not in stopList:
-   #response = response.replace(nextWord, "")
+        response = response.replace(nextWord, "")
         print("hello" +" " +nextWord)    
 
 
@@ -30,9 +31,12 @@ print(response)
 
 
 response = raw_input (" where are you from originally ? ")
+#if (response == " im from cornwall originally"):
 print(response)
 
-response = raw_input("do you want to go for a coffee ?")
+
+
+response = raw_input("is there anywhere you'd want to go for a coffee down there ?")
 print(response)
 
 response = raw_input("so how old are you ?")
@@ -42,7 +46,7 @@ print("response")
 response = raw_input(" whats your favourite colour ?")
 if (response == "blue"):
     print("thats mine too")
-elif(reponse == "red"):
+elif(response == "red"):
     print("red is sick" )
     
 elif(response == "yellow"):
