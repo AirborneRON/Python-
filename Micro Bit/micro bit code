@@ -1,0 +1,49 @@
+#this is where we import the mosquitto library as well as the serial and the random library 
+
+from mosquitto import * 
+from serial import *
+from random import *
+
+# FULL DEVICE NAME can be found by running: python PortScanner.py
+# SPEED is usually 115200 for Microbit and 9600 for Arduino
+board = Serial("/dev/cu.usbmodem1452",9600,timeout=2)
+
+#this is where we get our unique name so not to conflict with other peoples macs on the server
+
+randomID = random()
+client = Mosquitto("LightSubscriber" + str(randomID))
+client.connect("10.212.61.136")             # simons ip adress
+
+
+
+# this is where we get the message from the server
+# broker and obj are formats to listen out for message wise
+
+    
+
+    #Subscribe to the "/simon/test" topic
+    # listening to the correct messasge type i.e lights not doors 
+    
+client.subscribe("/lights")
+
+    #Write a function to handle the incoming message
+    
+    
+    # listening out for any messsage, global allows python to use client outside of the function 
+    # payload is the actuall message that we recieve from the server 
+    #board.write( is sending our message back over to the microbit)
+    
+def messageReceived(broker, obj, msg):
+    global client
+    payload = msg.payload.decode()
+    print("Message " + msg.topic + " containing: " + payload)
+    board.write(payload.encode())
+    
+
+    #Register the incoming message handler
+    
+client.on_message = messageReceived
+
+    #While the client still exists, ask it to process incoming messages
+    
+while (client != None): client.loop()
