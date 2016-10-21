@@ -1,40 +1,42 @@
 file = open("stop_words")
 stopList = file.read().split("\n")
 file.close()
-# how to upload stop words and read them then 
-#close
-#if("what is your name ?")
-# = ("aaron") raw_input("hows that pronounced")
+# how to open up my plain text file, then create a variable to stuff the read file into 
+#seperating each element of the list by the return key 
+#then close
 
 
-print(" Hello ")
+
+print(" Hello ")    
 response = raw_input(" what is your name ?")
 words = response.split(" ")
 for nextWord in words:
     if nextWord not in stopList:
         response = response.replace(nextWord, "")
-        print("hello" +" " +nextWord)    
+        print("Well hello" +" " +nextWord)
+        
+#because of how my stopList was formatted ive had to use the split function which has conflicted
+#with the String  
+        
+        
+if (response == "my name is aaron"):
+    print("how is that pronounced if you dont mind me asking")
+    #if ( response ==)
+    #elif(response == "")
 
 
-#for x in stopList
-    #x means every element in the list
-    #print.replace(response)
+response = raw_input( "not how it sounds then, my names Mac btw")
 
 
-
-response = raw_input("thats a nice name how do you pronounce that ?")
-print(response)
-
-
-response = raw_input( "not how it sounds then, my names Mac ")
-print(response)
+if (response == "nice to meet you"):
+    print("likewise")
 
 
 response = raw_input (" where are you from originally ? ")
-#if (response == " im from cornwall originally"):
-print(response)
+if (response == "im from cornwall originally"):
+    print("oh I hear its beautiful down those parts")
 
-
+#if (response == "")
 
 response = raw_input("is there anywhere you'd want to go for a coffee down there ?")
 print(response)
