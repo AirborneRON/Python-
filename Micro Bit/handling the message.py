@@ -9,8 +9,8 @@ while(True):
         
         if (next_character == "N"):
             display.show(Image.HAPPY)
-            display.show(Image.RABBIT)
-        #else: display.clear()              #what its suppose to do
+            #display.show(Image.RABBIT)
+        else: display.clear()              #what its suppose to do
         
         #if (next_character == "F"):
             #display.show(Image.RABBIT)

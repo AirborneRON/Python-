@@ -18,8 +18,8 @@ for nextWord in words:
 #because of how my stopList was formatted ive had to use the split function which has conflicted
 #with the String  
         
-        
-if (response == "my name is aaron"):
+#print ("line 21" + nextWord)        
+if (response == "aaron"):
     print("how is that pronounced if you dont mind me asking")
     #if ( response ==)
     #elif(response == "")
@@ -27,7 +27,7 @@ if (response == "my name is aaron"):
 
 response = raw_input( "not how it sounds then, my names Mac btw")
 
-
+#print ("line 30" + response)
 if (response == "nice to meet you"):
     print("likewise")
 

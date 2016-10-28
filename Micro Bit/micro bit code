@@ -6,7 +6,7 @@ from random import *
 
 # FULL DEVICE NAME can be found by running: python PortScanner.py
 # SPEED is usually 115200 for Microbit and 9600 for Arduino
-board = Serial("/dev/cu.usbmodem1452",9600,timeout=2)
+board = Serial("/dev/cu.usbmodem1412",9600,timeout=2)
 
 #this is where we get our unique name so not to conflict with other peoples macs on the server
 
