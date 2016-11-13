@@ -1,4 +1,4 @@
-#idea is to create lines that using all the data will create a #circle of results, and those with higher grades will have a longer #lines which anything ober the 40 pass rate will change colour randomly.
+#idea is to create a bar chart as my visulisation, i will need to access the data file and read it into the chart
 Markslist = [52,47,57,49,59,62,44,76,52,52,44,59,59,79,59,42,57,48,80,43,72,74,59,44,57,55,49,54,54] 
 
 from graphics import *
@@ -11,12 +11,22 @@ window = GraphWin("Visualisation", 1100, 700)
 
 mark = Markslist
 
+#graph outline
 
 sline = Line(Point(20,20),Point(20,620))
 sline.setWidth(2)
 sline.draw(window)
 
+bline = Line(Point(20,620),Point(1020,620))
+bline.setWidth(2)
+bline.draw(window)
+
+
+
+
+
 #10%
+
 markings = Line(Point(120,615),Point(120,625))
 markings.setWidth(1)
 markings.draw(window)
@@ -59,22 +69,104 @@ markings.draw(window)
 
 
 
-bline = Line(Point(20,620),Point(1020,620))
-bline.setWidth(2)
-bline.draw(window)
 
-lable = Text(Point(530,650), "Percentage Grade")
-lable.setTextColor('blue')
-lable.draw(window)
-
-
-
-
-
+#chart labling 
 
 detail = Text(Point(10,640),"0")
 detail.setTextColor('blue')
 detail.draw(window)
+
+
+#key
+box = Rectangle(Point(900,30),Point(1040,130))
+box.setFill(color_rgb(255,255,255))
+box.draw(window)
+
+
+#key
+keydetail = Text(Point(922,50), "Key")
+keydetail.setTextColor('blue')
+keydetail.draw(window)
+
+
+#fail colour
+keydetail = Text(Point(940,70,),"Fail Colour")
+keydetail.setTextColor('blue')
+keydetail.draw(window)
+#red
+keybox = Rectangle(Point(990,60),Point(1010,70))
+keybox.setFill(color_rgb(255,200,200))
+keybox.draw(window)
+
+#above pass
+keydetail = Text(Point(941,90),"Above Pass")
+keydetail.setTextColor('blue')
+keydetail.draw(window)
+#light green
+keybox = Rectangle(Point(990,85),Point(1010,95))
+keybox.setFill(color_rgb(156,252,165))
+keybox.draw(window)
+
+
+
+#passline
+keydetail = Text(Point(938,110,),"Pass Line")
+keydetail.setTextColor('blue')
+keydetail.draw(window)
+#yellow line
+keyline = Line(Point(990,110),Point(1030,110))
+keyline.setOutline('yellow')
+keyline.setWidth(3)
+keyline.draw(window)
+
+
+
+
+#chart
+lable = Text(Point(530,670), "Percentage Grade")
+lable.setTextColor('blue')
+lable.draw(window)
+
+percent = Text(Point(120,650), "10%")
+percent.setTextColor('blue')
+percent.draw(window)
+
+percent = Text(Point(220,650), "20%")
+percent.setTextColor('blue')
+percent.draw(window)
+
+percent = Text(Point(320,650), "30%")
+percent.setTextColor('blue')
+percent.draw(window)
+
+percent = Text(Point(420,650), "40%")
+percent.setTextColor('blue')
+percent.draw(window)
+
+percent = Text(Point(520,650), "50%")
+percent.setTextColor('blue')
+percent.draw(window)
+
+percent = Text(Point(620,650), "60%")
+percent.setTextColor('blue')
+percent.draw(window)
+
+percent = Text(Point(720,650), "70%")
+percent.setTextColor('blue')
+percent.draw(window)
+
+percent = Text(Point(820,650), "80%")
+percent.setTextColor('blue')
+percent.draw(window)
+
+percent = Text(Point(920,650), "90%")
+percent.setTextColor('blue')
+percent.draw(window)
+
+percent = Text(Point(1020,650), "100%")
+percent.setTextColor('blue')
+percent.draw(window)
+
 
     # couldn't get it to draw all the box's in a loop which was annoying and i know bad code 
 
